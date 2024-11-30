@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // Target modern JavaScript syntax for better performance
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Include DOM and ESNext libraries
+    "allowJs": true, // Allow JavaScript files in the project
+    "skipLibCheck": true, // Skip type checking of declaration files from node_modules
+    "strict": true, // Enable strict type checking
+    "noEmit": true, // Prevent TypeScript from emitting compiled JavaScript
+    "esModuleInterop": true, // Enable interoperability for CommonJS and ES modules
+    "module": "esnext", // Use ESNext module system
+    "moduleResolution": "node", // Resolve modules using Node.js-style resolution
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Enforce isolated modules (required for Next.js)
+    "jsx": "preserve", // Preserve JSX for Next.js
+    "incremental": true, // Enable incremental builds for faster recompilation
+    "baseUrl": ".", // Enable absolute imports from the root directory
+    "paths": {
+      "@/*": [
+        "./*"
+      ] // Map imports starting with "@" to the root directory
+    },
+    "types": [
+      "node"
+    ] // Include Node.js types for better compatibility
+    ,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts", // Include Next.js-specific TypeScript definitions
+    "**/*.ts", // Include all TypeScript files
+    "**/*.tsx", // Include all TSX files for React
+    ".next/types/**/*.ts", // Include Next.js type declarations
+    "global.d.ts" // Ensure custom global declarations are included
+  ],
+  "exclude": [
+    "node_modules", // Exclude dependencies
+    ".next", // Exclude Next.js build output
+    "out", // Exclude static export output (if applicable)
+    "dist" // Exclude custom build directories
+  ]
+}
